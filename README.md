@@ -1,44 +1,87 @@
-# 🐚 Mini Shell in C
+# 🐚 MiniShell – A Basic Linux Shell in C
 
-This is a basic implementation of a mini shell written in C.
+Welcome to **MiniShell**, a lightweight command-line shell written in C as a part of my journey in mastering Operating Systems and C programming. It is designed to provide a basic Unix-like interface for executing simple commands.
+
+> ⚠️ This is a beginner-level shell and currently supports only basic external commands with no arguments. More advanced features will be added incrementally.
+
+---
 
 ## 🚀 Features
-- Basic command execution
-- Supports arguments (like `ls -l`, `echo hello`)
-- Looping prompt
-- Exit functionality using `exit` command
 
-## 🔧 How to Compile and Run
+- Read and execute external system commands
+- Basic shell loop
+- Exit command (`exit`) to quit shell
+- Forks a child process for each command
+- Waits for child process to complete
+
+---
+
+## 🧠 How It Works
+
+1. Prompts user with `minishell>`.
+2. Reads input from standard input.
+3. Forks a child process using `fork()`.
+4. Executes the command using `execvp()`.
+5. Waits for the command to finish with `waitpid()`.
+
+---
+
+## 🛠️ How to Build
 
 ```bash
-gcc -o minishell minishell.c
+gcc main.c -o minishell
+```
+
+Make sure you have `gcc` installed. Then run the shell with:
+
+```bash
 ./minishell
 ```
 
-## 📦 Example
+---
 
+## 📟 Example Usage
+
+```shell
+Welcome to MiniShell! Type 'exit' to quit.
+minishell> pwd
+/home/yourname/Desktop
+
+minishell> ls
+main.c  minishell  README.md
+
+minishell> exit
+Goodbye!
 ```
-myshell> echo Hello, world!
-Hello, world!
-myshell> ls
-<files and folders here>
-myshell> exit
+
+---
+
+## 📁 Project Structure
+
+```plaintext
+📦 MiniShell/
+ ┣ 📜 main.c        -> Source code of the shell
+ ┣ 📜 README.md     -> Project documentation
 ```
 
-## 📚 What You Can Learn
+---
 
-- Using `fork()` and `execvp()`
-- Handling user input
-- Working with strings and arrays in C
+## 👨‍💻 Author
 
-## 🔥 Roadmap
+### Nishu Tak
 
-- Add support for `cd`, `pwd`, and other built-in commands
-- Add command history
-- Handle redirection and pipes
-- Create a beautiful prompt with colors
+- 🎓 Pre-Final Year BTech CSE with a specilization in ccvt
+  
+📬 **Connect with me:**
 
-## 🧠 Author
+- GitHub: [github.com/Nitanshu715](https://github.com/Nitanshu715)
+- LinkedIn: [linkedin.com/in/NitanshuTak](https://www.linkedin.com/in/nitanshu-tak-89a1ba289/?originalSubdomain=in)
 
-Made while learning C and building up towards an advanced shell. First step towards something great 🚀
+---
+
+## 📜 License
+
+This project is open-source and available under the [MIT License](LICENSE).
+
+---
 
